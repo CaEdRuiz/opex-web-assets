@@ -1,0 +1,88 @@
+﻿/* Custom Added */
+.k-widget.k-listview {
+    border: none;
+}
+
+.k-grid-norecords-template {
+    border: none;
+}
+
+.show-empty {
+    alt: "No Records";
+    src: url("https://apps.bae.gym:84/Resources/assets/img/Empty.png");
+    content: url("https://apps.bae.gym:84/Resources/assets/img/Empty.png");
+    width: 100%;
+    height: auto;
+}
+
+.custom-hidden {
+    display: none;
+}
+
+/* Notifications */
+.unseen {
+    background-color: #FFFFF0
+}
+
+.k-window_footer {
+    position: fixed;
+    bottom: 20px;
+}
+
+.k-window_footer-right {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.k-listview {
+    border-style: none;
+}
+
+/* Alinea todos los <th> de los kendo grid que tengan text-align: center; el que es el metodo de centrado anterior (por cambios de Kendo v2023+) */
+.k-grid th[style*="text-align: center"] {
+  justify-content: center;
+}
+
+/* Corrige íconos .k-icon con clase k-i-* que no incluyen .k-font-icon (por cambios de Kendo v2023+) */
+.k-icon[class*="k-i-"]:not(.k-font-icon) {
+    font-family: "WebComponentsIcons", "Icons";
+
+    width: 1em;
+    height: 1em;
+    outline: 0;
+    font-size: 16px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-transform: none;
+    text-decoration: none;
+    flex-shrink: 0;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    position: relative;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Reemplazo moderno para .pull-right */
+.pull-right {
+  margin-left: auto; /* Esto empuja el elemento a la derecha en un flex container */
+}
+
+/* Reemplazo moderno para .pull-left (opcional, es default) */
+.pull-left {
+  margin-right: auto;
+}
+
+/* 
+.k-state-disabled,
+.k-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+} */

@@ -1,0 +1,149 @@
+﻿
+.unseen {
+    background-color: #FFFFF0
+}
+
+.widget-notifications .notification {
+    position: relative;
+    padding: 7px 12px
+}
+
+    .widget-notifications .notification + .notification {
+        border-top: 1px solid #e4e4e4
+    }
+
+.widget-notifications .notifications-list {
+    overflow: hidden;
+    position: relative
+}
+
+.widget-notifications .notification-ago, .widget-notifications .notification-description, .widget-notifications .notification-title {
+    display: block;
+    margin-right: 35px
+}
+
+.widget-notifications .notification-title {
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 1px
+}
+
+.widget-notifications .notification-description {
+    font-size: 16px;
+    color: #666
+}
+
+.widget-notifications .notification-ago {
+    font-size: 16px;
+    font-style: italic;
+    color: #bbb
+}
+
+.widget-notifications .notification-icon {
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 0px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin: -13px 12px 0 0;
+    font-size: 16px
+}
+
+.widget-notifications .notifications-link {
+    text-align: center;
+    padding: 8px 0 !important;
+    border-top: 1px solid #e4e4e4;
+    display: block;
+    text-decoration: none !important;
+    font-size: 10px;
+    font-weight: 800;
+    color: #999;
+    line-height: 18px !important;
+    height: auto !important
+}
+
+    .widget-notifications .notifications-link:hover {
+        background: #f4f4f4;
+        color: #555
+    }
+
+.navbar .nav-icon-btn.dropdown > a:after {
+    display: none !important
+}
+
+.navbar .dropdown-menu > li > a > .badge {
+    line-height: 14px
+}
+
+*.navbar .nav-icon-btn > a {
+    width: auto
+}
+
+.navbar .nav-icon-btn > a .badge, .navbar .nav-icon-btn > a .label, .navbar .nav-icon-btn > a .small-screen-text {
+    display: inline-block
+}
+
+.navbar .dropdown-menu .badge.pull-right, .navbar .dropdown-menu .label.pull-right, .navbar .nav-icon-btn .badge, .navbar .nav-icon-btn .label {
+    float: right;
+    top: 13px
+}
+
+.navbar .nav-icon-btn.nav-icon-btn-success .label {
+    background: #5ebd5e
+}
+
+.navbar .nav-icon-btn.nav-icon-btn-warning .label {
+    background: #f4b04f
+}
+
+.navbar .nav-icon-btn.nav-icon-btn-danger .label {
+    background: #e66454
+}
+
+.navbar .nav-icon-btn.nav-icon-btn-info .label {
+    background: #5bc0de
+}
+
+.navbar .dropdown-menu .badge.pull-right, .navbar .dropdown-menu .label.pull-right {
+    top: 8px
+}
+
+.navbar .dropdown-menu > li > a > .badge, .navbar .dropdown-menu > li > a > .label {
+    font-size: 10px;
+    line-height: 13px;
+    top: 1px;
+    padding-left: 4px !important;
+    padding-right: 4px !important
+}
+
+.navbar .dropdown-menu > li > a > .label {
+    padding-top: 1px;
+    padding-bottom: 1px
+}
+
+.navbar .nav-icon-btn {
+    font-size: 16px
+}
+
+    .navbar .nav-icon-btn > a {
+        text-align: center;
+        width: 70px
+    }
+
+        .navbar .nav-icon-btn > a .nav-icon {
+            display: inline-block;
+            font-size: 20px;
+            margin: 0 !important
+        }
+
+        .navbar .nav-icon-btn > a .badge, .navbar .nav-icon-btn > a .label {
+            font-size: 20px;
+            padding: 2px;
+            line-height: 18px;
+            position: absolute;
+            display: block;
+            right: 10px
+        }

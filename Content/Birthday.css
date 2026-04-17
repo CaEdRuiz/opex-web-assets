@@ -1,0 +1,367 @@
+﻿
+@import url("https://fonts.googleapis.com/css?family=Concert+One|Pacifico");
+
+#birdaycake .mobile {
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    top: 50px;
+    font-size: 90px;
+    display: block;
+}
+
+#birdaycake h1,
+#birdaycake h2,
+#birdaycake span {
+    display: none;
+}
+
+@media screen and (min-width: 670px) {
+    #birdaycake .mobile {
+        display: none;
+    }
+
+    #birdaycake h1,
+    #birdaycake h2,
+    #birdaycake span {
+        display: block;
+    }
+
+    $colors: #ef8d22, #feff28, #2bd8ff, #fc85e1;
+    $particles: 50;
+    $width: 500;
+    $height: 500;
+
+    // Create the explosion...
+    $box-shadow: ();
+    $box-shadow2: ();
+    @for $i from 0 through $particles {
+        $box-shadow: $box-shadow, random($width)-$width / 2 + px random($height)-$height / 1.2 + px hsl(random(360), 100, 50);
+        $box-shadow2: $box-shadow2, 0 0 #fff;
+    }
+
+    @mixin keyframes($animationName) {
+        @-webkit-keyframes
+
+        # {
+            $animationName
+        }
+
+{
+    @content;
+}
+
+@-moz-keyframes
+
+# {
+    $animationName
+}
+
+{
+    @content;
+}
+
+@-o-keyframes
+
+# {
+    $animationName
+}
+
+{
+    @content;
+}
+
+@-ms-keyframes
+
+# {
+    $animationName
+}
+
+{
+    @content;
+}
+
+@keyframes
+
+# {
+    $animationName
+}
+
+{
+    @content;
+}
+
+}
+
+@mixin animation-delay($settings) {
+    -moz-animation-delay: $settings;
+    -webkit-animation-delay: $settings;
+    -o-animation-delay: $settings;
+    -ms-animation-delay: $settings;
+    animation-delay: $settings;
+}
+
+@mixin animation-duration($settings) {
+    -moz-animation-duration: $settings;
+    -webkit-animation-duration: $settings;
+    -o-animation-duration: $settings;
+    -ms-animation-duration: $settings;
+    animation-duration: $settings;
+}
+
+@mixin animation($settings) {
+    -moz-animation: $settings;
+    -webkit-animation: $settings;
+    -o-animation: $settings;
+    -ms-animation: $settings;
+    animation: $settings;
+}
+
+@mixin transform($settings) {
+    transform: $settings;
+    -moz-transform: $settings;
+    -webkit-transform: $settings;
+    -o-transform: $settings;
+    -ms-transform: $settings;
+}
+
+.cake_header h2 {
+    text-align: center;
+    width: 100%;
+    top: 20px;
+    font-size: 90px;
+    background: -webkit-linear-gradient( 90deg, rgba(233, 230, 255, 1) 0%, rgba(255, 255, 255, 1) 100% );
+    -webkit-background-clip: text;
+    /*-webkit-text-fill-color: transparent;*/
+}
+
+.cake_header h3 {
+    text-align: center;
+    width: 100%;
+    top: 150px;
+    font-size: 90px;
+    /*background: -webkit-linear-gradient( 90deg, rgba(233, 230, 255, 1) 0%, rgba(255, 255, 255, 1) 100% );*/
+    background: -webkit-linear-gradient( 0deg, rgba(173, 229, 252, 1) 0%, rgba(163, 187, 251, 1) 100% );
+    font-family: "Concert One", cursive;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cake_footer {
+    margin-top: 50px;
+}
+
+    .cake_footer h1 {
+        text-align: center;
+        width: 100%;
+        font-size: 60px;
+        background: -webkit-linear-gradient( 0deg, rgba(173, 229, 252, 1) 0%, rgba(163, 187, 251, 1) 100% );
+        -webkit-background-clip: text;
+        font-weight: 400;
+        z-index: -1;
+        font-family: "Pacifico", cursive
+    }
+
+#birdaycake {
+    /*background: #f37c7c;*/
+    cursor: crosshair;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    font-family: "Pacifico", cursive;
+}
+    #birdaycake span {
+        position: fixed;
+        text-align: center;
+        width: 100%;
+        top: 70px;
+        font-size: 70px;
+    }
+
+
+    #birdaycake bokeh {
+        position: fixed;
+        width: 2vmin;
+        height: 2vmin;
+        border-radius: 50%;
+        animation-name: explosion;
+        animation-iteration-count: infinite;
+        animation-direction: reverse;
+        animation-timing-function: cubic-bezier(0.84, 0.02, 1, 1);
+
+        @for $i from 1 through 100 {
+            &:nth-child(#{$i}) {
+                $color: ceil(random() * 4);
+                background-color: nth($colors, $color);
+                $x: random() * 100vw;
+                $y: random() * 100vh;
+                transform: translate($x, $y);
+                animation-duration: random() * 3s + 2s;
+                animation-delay: random() * -5s;
+            }
+        }
+    }
+
+@keyframes explosion {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(50vw, 100vh);
+    }
+}
+
+#birdaycake .cake {
+    position: relative;
+    top: 70px;
+    margin: auto;
+    width: 200px;
+    height: 60px;
+    background: #bce9ff;
+    border-radius: 100%;
+    transform: translateZ(100px);
+    box-shadow: 0px 4px 0px #f4f9fd, 0px 8px 0px #dba9ff, 0px 12px 0px #fec3b3, 0px 16px 0px #f7f6fb, 0px 20px 0px #f7f6fb, 0px 24px 0px #f7f6fb, 0px 28px 0px #f7f6fb, 0px 32px 0px #fea0bb, 0px 36px 0px #fea0bb, 0px 40px 0px #9cef9d, 0px 44px 0px #9cef9d, 0px 48px 0px #f7f6fb, 0px 52px 0px #f7f6fb, 0px 56px 0px #f7f6fb, 0px 60px 0px #f7f6fb, 0px 64px 0px #f7f6fb, 0px 68px 0px #dfa5fc, 0px 72px 0px #dfa5fc, 0px 76px 0px #fafffe, 0px 80px 0px #fafffe;
+}
+
+#birdaycake .plate {
+    position: absolute;
+    height: 90px;
+    width: 300px;
+    bottom: -95px;
+    left: 50%;
+    top: 200px;
+    margin-left: -150px;
+    border-radius: 100%;
+    background: radial-gradient( ellipse closest-side at center, rgba(8, 199, 254, 1) 0%, rgba(4, 215, 242, 1) 71%, rgba(2, 255, 208, 1) 100% );
+    box-shadow: 0px 3px 0px #00e2e1, 0px 6px 0px #00d3fb;
+    transform: translateZ(80px);
+}
+
+#birdaycake .candle {
+    position: relative;
+    height: 50px;
+    width: 12px;
+    top: 100px;
+    margin: auto;
+    background: linear-gradient( 0deg, rgba(183, 244, 167, 1) 0%, rgba(255, 255, 255, 1) 100% );
+    border-radius: 4px;
+    transform: translateZ(120px);
+}
+
+#birdaycake #flame {
+    position: absolute;
+    z-index: 10;
+}
+
+#birdaycake .lit {
+    background: linear-gradient(to bottom, #fff6d9, #fbc36c);
+    width: 15px;
+    height: 35px;
+    /*  Info on border radius. http://www.css3.info/preview/rounded-border/ */
+    border-top-left-radius: 10px 35px;
+    border-top-right-radius: 10px 35px;
+    border-bottom-right-radius: 10px 10px;
+    border-bottom-left-radius: 10px 10px;
+    top: -34px;
+    margin: auto;
+    /*   http://www.css3.info/preview/box-shadow/ */
+    box-shadow: 0 0 17px 7px rgba(251, 246, 190, 0.71);
+    transform-origin: bottom;
+    animation: flicker 1s ease-in-out alternate infinite;
+}
+
+@keyframes flicker {
+    0% {
+        transform: skewX(5deg);
+        box-shadow: 0 0 17px 10px rgba(251, 246, 190, 0.71);
+    }
+
+    25% {
+        transform: skewX(-5deg);
+        box-shadow: 0 0 17px 5px rgba(251, 246, 190, 0.71);
+    }
+
+    50% {
+        transform: skewX(10deg);
+        box-shadow: 0 0 17px 7px rgba(251, 246, 190, 0.71);
+    }
+
+    75% {
+        transform: skewX(-10deg);
+        box-shadow: 0 0 17px 5px rgba(251, 246, 190, 0.71);
+    }
+
+    100% {
+        transform: skewX(5deg);
+        box-shadow: 0 0 17px 10px rgba(251, 246, 190, 0.71);
+    }
+}
+
+#birdaycake .pyro > .before,
+#birdaycake .pyro > .after {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    box-shadow: $box-shadow2;
+    @include animation( (
+        1s bang ease-out infinite backwards,
+        1s gravity ease-in infinite backwards,
+        5s position linear infinite backwards
+      ) );
+}
+
+#birdaycake .pyro > .after {
+    @include animation-delay((1.25s, 1.25s, 1.25s));
+    @include animation-duration((1.25s, 1.25s, 6.25s));
+}
+
+@include keyframes(bang) {
+    #birdaycake to {
+        box-shadow: $box-shadow;
+    }
+}
+
+@include keyframes(gravity) {
+    #birdaycake to {
+        @include transform(translateY(200px));
+        opacity: 0;
+    }
+}
+
+@include keyframes(position) {
+    0%,
+    19.9% {
+        margin-top: 10%;
+        margin-left: 40%;
+    }
+
+    20%,
+    39.9% {
+        margin-top: 40%;
+        margin-left: 30%;
+    }
+
+    40%,
+    59.9% {
+        margin-top: 20%;
+        margin-left: 70%;
+    }
+
+    60%,
+    79.9% {
+        margin-top: 30%;
+        margin-left: 20%;
+    }
+
+    80%,
+    99.9% {
+        margin-top: 30%;
+        margin-left: 80%;
+    }
+}
+}
